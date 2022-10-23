@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Foundations Data, Data, Everywhere · GitBook</title>
+        <title>The Six Phases of Data Analysis · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1.1.html" />
+    <link rel="next" href="2.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="1.1.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="1.html">
+        <li class="chapter " data-level="1.2" data-path="1.html">
             
                 <a href="1.html">
             
@@ -129,7 +129,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="1.2.html">
+        <li class="chapter active" data-level="1.2.2" data-path="1.2.html">
             
                 <a href="1.2.html">
             
@@ -642,7 +642,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Foundations Data, Data, Everywhere</a>
+        <a href="." >The Six Phases of Data Analysis</a>
     </h1>
 </div>
 
@@ -657,8 +657,84 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="foundations-data-data-everywhere">Foundations: Data, Data, Everywhere</h1>
-<p>This is the first course of the specialization, in which we will learn the foundation of data analytics, including some key terminologies and the six phases of data analytics. We will also start to use the spreadsheets and SQL. </p>
+                                <h1 id="the-six-phases-of-data-analysis">The Six Phases of Data Analysis</h1>
+<h2 id="phase-1-ask">Phase 1: Ask</h2>
+<p>You need to identify your business task.</p>
+<blockquote>
+<p><strong>Business task</strong>: The question or problem data analysis resolves for a business.</p>
+</blockquote>
+<p>You need to understand what should be down and what is expected. </p>
+<blockquote>
+<p><strong>Gap analysis</strong>: A method for examining and evaluating the current state of a process in order to identify opportunities for improvement in the future.</p>
+</blockquote>
+<p>You need to identify your stakeholders. </p>
+<blockquote>
+<p><strong>Stakeholders</strong>: People who invest time and resources into a project and are interested in its outcome.</p>
+</blockquote>
+<h2 id="phase-2-prepare">Phase 2: Prepare</h2>
+<p>You need to prepare your data and decide what data to use. </p>
+<blockquote>
+<p><strong>Data design</strong>: How information is organized.</p>
+</blockquote>
+<p>When preparing data, we need to identify our data strategy. </p>
+<blockquote>
+<p><strong>Data strategy</strong>: The management of the people, processes, and tools used in data analysis.</p>
+</blockquote>
+<p>Also, considering the concept of &#x201C;Fairness&#x201D; is also essential in this part. </p>
+<blockquote>
+<p>Fairness: A quality of data analysis that does not create or reinforce bias.</p>
+</blockquote>
+<p>When we realize that our data has some bias, we need to find a way to prevent the analysis of the data create or reinforce that bias. </p>
+<p><em>E.g. We can increase the population of nighttime riders when finding the majority take the train in the daytime.</em> </p>
+<h2 id="phase-3-process">Phase 3: Process</h2>
+<h2 id="phase-4-analysis">Phase 4: Analysis</h2>
+<h3 id="using-a-spreadsheet">Using a Spreadsheet</h3>
+<p>You should consider to use a spreadsheet when examining a small amount of data. </p>
+<blockquote>
+<p><strong>Attribute</strong>: A characteristic or quality of data used to label a column in a table.</p>
+<p><strong>Observation</strong>: The attributes that describe a piece of data contained in a row of a table.</p>
+<p><strong>Formula</strong>: A set of instructions used to perform a calculation using the data in a spreadsheet.</p>
+<p><strong>Function</strong>: A preset command that automatically performs a process or task using the data in a spreadsheet.</p>
+</blockquote>
+<h2 id="using-a-query-language">Using a query language</h2>
+<p>Sometimes, you need to use a query language to access a database. </p>
+<blockquote>
+<p><strong>Query</strong>: A request for data or information from a database.</p>
+<p><strong>Query language</strong>: A computer programming language used to communicate with a database.</p>
+</blockquote>
+<p>The most commonly-used query language is the SQL (Structured Query Language).</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> 
+#The <span class="hljs-keyword">range</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">data</span>
+<span class="hljs-keyword">FROM</span> 
+#The <span class="hljs-keyword">name</span> <span class="hljs-keyword">of</span> the the <span class="hljs-keyword">database</span>
+<span class="hljs-keyword">WHERE</span>
+#Additional requirement
+</code></pre>
+<p>Some times, we put a <code>*</code> after <code>SELECT</code>, meaning we select all data from the database that fulfills the additional requirement. </p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+*
+<span class="hljs-keyword">FROM</span>
+movie
+<span class="hljs-keyword">WHERE</span>
+movie_genre = <span class="hljs-string">&quot;Action&quot;</span>
+</code></pre>
+<p>The code above selects all data from the database <em>movie</em> that have <em>&#x201C;Action&#x201D;</em> as their <em>movie_genre.</em></p>
+<h2 id="phase-5-share">Phase 5: Share</h2>
+<p>The share part focuses on visualizing the data to better present the results from the data analysis. </p>
+<blockquote>
+<p><strong>Data visualization</strong>: The graphical representation of data.</p>
+</blockquote>
+<p>When sharing the data,  we need to consider the context of the data</p>
+<blockquote>
+<p><strong>Context</strong>: The condition in which something exists or happens.</p>
+<p><strong>Root cause</strong>: The reason why a problem occurs.</p>
+</blockquote>
+<p>We also need to select the ways of visualization wisely. Remember, visualizing the data makes the outcomes of the analysis more convincing and easy-to-follow. It also helps to present some interesting findings and trends directly. </p>
+<h2 id="phase-6-act">Phase 6: Act</h2>
+<p>In this phase, the company should adjust the business strategy according to the conclusion drawn from the data analysis. </p>
+<blockquote>
+<p><strong>Data-driven decision-making</strong>: Using facts to guide business strategy.</p>
+</blockquote>
 
                                 
                                 </section>
@@ -686,12 +762,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="1.1.html" class="navigation navigation-prev " aria-label="Previous page: Foundations">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="1.1.html" class="navigation navigation-next " aria-label="Next page: Foundations">
+                <a href="2.html" class="navigation navigation-next " aria-label="Next page: Ask Questions to Make Data-Driven Decisions">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -702,7 +778,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Foundations Data, Data, Everywhere","level":"1.2","depth":1,"next":{"title":"Foundations","level":"1.2.1","depth":2,"path":"1.1.md","ref":"1.1.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"readme.md","ref":"readme.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.md","mtime":"2022-10-23T03:49:41.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"The Six Phases of Data Analysis","level":"1.2.2","depth":2,"next":{"title":"Ask Questions to Make Data-Driven Decisions","level":"1.3","depth":1,"path":"2.md","ref":"2.md","articles":[{"title":"Different Problem Types","level":"1.3.1","depth":2,"path":"2.1.md","ref":"2.1.md","articles":[]},{"title":"Mathematical thinking","level":"1.3.2","depth":2,"path":"2.2.md","ref":"2.2.md","articles":[]},{"title":"Using the Spreadsheet","level":"1.3.3","depth":2,"path":"2.3.md","ref":"2.3.md","articles":[]},{"title":"Working with Stakeholders (Optional)","level":"1.3.4","depth":2,"path":"2.4.md","ref":"2.4.md","articles":[]}]},"previous":{"title":"Foundations","level":"1.2.1","depth":2,"path":"1.1.md","ref":"1.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.2.md","mtime":"2022-10-23T03:49:47.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

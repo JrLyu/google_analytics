@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Foundations Data, Data, Everywhere · GitBook</title>
+        <title>Organizing Data · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1.1.html" />
+    <link rel="next" href="5.2.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="5.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="1.html">
+        <li class="chapter " data-level="1.2" data-path="1.html">
             
                 <a href="1.html">
             
@@ -413,7 +413,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="5.1.html">
+        <li class="chapter active" data-level="1.6.1" data-path="5.1.html">
             
                 <a href="5.1.html">
             
@@ -642,7 +642,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Foundations Data, Data, Everywhere</a>
+        <a href="." >Organizing Data</a>
     </h1>
 </div>
 
@@ -657,8 +657,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="foundations-data-data-everywhere">Foundations: Data, Data, Everywhere</h1>
-<p>This is the first course of the specialization, in which we will learn the foundation of data analytics, including some key terminologies and the six phases of data analytics. We will also start to use the spreadsheets and SQL. </p>
+                                <h1 id="organizing-data">Organizing Data</h1>
+<blockquote>
+<p><strong>Analysis</strong>: The process used to make sense of the data collected.</p>
+</blockquote>
+<h2 id="sorting-and-filtering">Sorting and Filtering</h2>
+<p>Using SQL to filter data: </p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> _____
+<span class="hljs-keyword">FROM</span>   _____
+<span class="hljs-keyword">WHERE</span> _____  <span class="hljs-keyword">AND</span> _____
+</code></pre>
+<h2 id="sorting-data-in-spreadsheets">Sorting Data in Spreadsheets</h2>
+<blockquote>
+<p><strong>Sort sheet</strong>: A spreadsheet menu function that sorts all data by the ranking of a specific sorted column and keeps data together across rows.</p>
+<p><strong>Sort range</strong>: A spreadsheet menu function that sorts a specified range and preserves the cells outside the range.</p>
+</blockquote>
+<p>Writing the SORT function</p>
+<pre><code>SORT(DataRange,ColumnNumber,True/False)
+*True means sort the data in ascending order. 
+**False means to sort the data in descending order.
+</code></pre><p>You can add another sorting criterion. </p>
+<h2 id="sorting-data-in-sql">Sorting Data in SQL</h2>
+<blockquote>
+<p><strong>ORDER BY</strong>: A SQL clause that sorts results returned in a query.</p>
+</blockquote>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> _____
+<span class="hljs-keyword">FROM</span> _____
+<span class="hljs-keyword">WHERE</span> _____ <span class="hljs-keyword">AND</span> _____
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> <span class="hljs-string">&quot;Criteria&quot;</span> (<span class="hljs-keyword">DESC</span>)
+#<span class="hljs-keyword">If</span> you <span class="hljs-keyword">include</span> <span class="hljs-keyword">DESC</span> <span class="hljs-keyword">in</span> the clause, <span class="hljs-keyword">SQL</span> will <span class="hljs-keyword">sort</span> the <span class="hljs-keyword">data</span> <span class="hljs-keyword">in</span> descending <span class="hljs-keyword">order</span>. 
+#<span class="hljs-keyword">If</span> <span class="hljs-keyword">DESC</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> included, <span class="hljs-keyword">SQL</span> will <span class="hljs-keyword">sort</span> the <span class="hljs-keyword">data</span> <span class="hljs-keyword">in</span> ascending <span class="hljs-keyword">order</span>.
+</code></pre>
 
                                 
                                 </section>
@@ -686,12 +715,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="5.html" class="navigation navigation-prev " aria-label="Previous page: Analyze Data to Answer Questions">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="1.1.html" class="navigation navigation-next " aria-label="Next page: Foundations">
+                <a href="5.2.html" class="navigation navigation-next " aria-label="Next page: Converting and Formatting Data">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -702,7 +731,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Foundations Data, Data, Everywhere","level":"1.2","depth":1,"next":{"title":"Foundations","level":"1.2.1","depth":2,"path":"1.1.md","ref":"1.1.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"readme.md","ref":"readme.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.md","mtime":"2022-10-23T03:49:41.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Organizing Data","level":"1.6.1","depth":2,"next":{"title":"Converting and Formatting Data","level":"1.6.2","depth":2,"path":"5.2.md","ref":"5.2.md","articles":[]},"previous":{"title":"Analyze Data to Answer Questions","level":"1.6","depth":1,"path":"5.md","ref":"5.md","articles":[{"title":"Organizing Data","level":"1.6.1","depth":2,"path":"5.1.md","ref":"5.1.md","articles":[]},{"title":"Converting and Formatting Data","level":"1.6.2","depth":2,"path":"5.2.md","ref":"5.2.md","articles":[]},{"title":"Data Aggregation","level":"1.6.3","depth":2,"path":"5.3.md","ref":"5.3.md","articles":[]},{"title":"Data Calculation","level":"1.6.4","depth":2,"path":"5.4.md","ref":"5.4.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"5.1.md","mtime":"2022-10-23T04:09:03.039Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

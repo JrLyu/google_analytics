@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Foundations Data, Data, Everywhere · GitBook</title>
+        <title>Reporting and Validating Clean Data · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1.1.html" />
+    <link rel="next" href="4.6.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="4.4.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="1.html">
+        <li class="chapter " data-level="1.2" data-path="1.html">
             
                 <a href="1.html">
             
@@ -368,7 +368,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="4.5.html">
+        <li class="chapter active" data-level="1.5.5" data-path="4.5.html">
             
                 <a href="4.5.html">
             
@@ -642,7 +642,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Foundations Data, Data, Everywhere</a>
+        <a href="." >Reporting and Validating Clean Data</a>
     </h1>
 </div>
 
@@ -657,8 +657,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="foundations-data-data-everywhere">Foundations: Data, Data, Everywhere</h1>
-<p>This is the first course of the specialization, in which we will learn the foundation of data analytics, including some key terminologies and the six phases of data analytics. We will also start to use the spreadsheets and SQL. </p>
+                                <h1 id="reporting-and-validating-clean-data">Reporting and Validating Clean Data</h1>
+<h2 id="using-spreadsheet">Using Spreadsheet</h2>
+<blockquote>
+<p><strong>COUNTA</strong>: A spreadsheet function that counts the total number of values within a specified range.</p>
+<p><strong>Find and replace</strong>: A tool that finds a specified search term and replaces it with something else.</p>
+</blockquote>
+<h2 id="using-sql">Using SQL</h2>
+<p>Use the <code>CASE</code> function</p>
+<blockquote>
+<p><strong>CASE</strong>: A SQL statement that returns record that meet conditions by including an if/then statement in a query.</p>
+</blockquote>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    variable_name1
+    <span class="hljs-keyword">CASE</span>
+        <span class="hljs-keyword">WHEN</span> variable_name2 = <span class="hljs-string">&apos;wrong_value&apos;</span> <span class="hljs-keyword">THEN</span> <span class="hljs-string">&apos;correct_value&apos;</span>
+        <span class="hljs-keyword">ELSE</span> variable_name2
+        <span class="hljs-keyword">END</span> <span class="hljs-keyword">AS</span> new_variable_name
+<span class="hljs-keyword">FROM</span>
+    table_name
+<span class="hljs-keyword">WHERE</span>
+</code></pre>
+<h2 id="the-change-log">The Change Log</h2>
+<blockquote>
+<p><strong>Change log:</strong> A file containing a chronologically ordered list of modifications made to a project.</p>
+<p><strong>Verification</strong>: A process to confirm that a data-cleaning effort was well executed and the resulting data is accurate and reliable.</p>
+</blockquote>
 
                                 
                                 </section>
@@ -686,12 +710,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="4.4.html" class="navigation navigation-prev " aria-label="Previous page: Using SQL to Clean Data">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="1.1.html" class="navigation navigation-next " aria-label="Next page: Foundations">
+                <a href="4.6.html" class="navigation navigation-next " aria-label="Next page: Build Your Resume (Optional)">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -702,7 +726,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Foundations Data, Data, Everywhere","level":"1.2","depth":1,"next":{"title":"Foundations","level":"1.2.1","depth":2,"path":"1.1.md","ref":"1.1.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"readme.md","ref":"readme.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.md","mtime":"2022-10-23T03:49:41.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Reporting and Validating Clean Data","level":"1.5.5","depth":2,"next":{"title":"Build Your Resume (Optional)","level":"1.5.6","depth":2,"path":"4.6.md","ref":"4.6.md","articles":[]},"previous":{"title":"Using SQL to Clean Data","level":"1.5.4","depth":2,"path":"4.4.md","ref":"4.4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"4.5.md","mtime":"2022-10-23T04:05:52.349Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

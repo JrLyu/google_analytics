@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Foundations Data, Data, Everywhere · GitBook</title>
+        <title>Data Calculation · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1.1.html" />
+    <link rel="next" href="6.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="5.3.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="1.html">
+        <li class="chapter " data-level="1.2" data-path="1.html">
             
                 <a href="1.html">
             
@@ -452,7 +452,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="5.4.html">
+        <li class="chapter active" data-level="1.6.4" data-path="5.4.html">
             
                 <a href="5.4.html">
             
@@ -642,7 +642,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Foundations Data, Data, Everywhere</a>
+        <a href="." >Data Calculation</a>
     </h1>
 </div>
 
@@ -657,8 +657,101 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="foundations-data-data-everywhere">Foundations: Data, Data, Everywhere</h1>
-<p>This is the first course of the specialization, in which we will learn the foundation of data analytics, including some key terminologies and the six phases of data analytics. We will also start to use the spreadsheets and SQL. </p>
+                                <h1 id="data-calculation">Data Calculation</h1>
+<blockquote>
+<p><strong>Statistics</strong>: The study of how to collect, analyze, summarize, and present data.</p>
+<p><strong>Calculus</strong>: A branch of mathematics that involves the study of rates of change and the changes between values that are related by a function.</p>
+<p><strong>Causation</strong>: When an action directly leads to an outcome, such as cause-effect relationship.</p>
+<p><strong>Correlation</strong>: The measure of the degree to which two variables change in relationship to each other.</p>
+</blockquote>
+<h2 id="data-calculation-in-spreadsheets">Data Calculation in Spreadsheets</h2>
+<h3 id="formula">Formula</h3>
+<blockquote>
+<p><strong>Array</strong>: A collection of values in spreadsheet cells.</p>
+<p><strong>Modulo</strong>: An operator (%) that returns the remainder when one number is divided by another.</p>
+<p><strong>SUMIF</strong>: A spreadsheet function that adds numeric data based on one condition.</p>
+<p><strong>AVERAGEIF</strong>: A spreadsheet function that returns the average of all cell values from a given range that meet a specified condition.</p>
+<p><strong>SUMPRODUCT</strong>: A function that multiplies arrays and returns the sum of those products.</p>
+<p><strong>MAXIFS</strong>: A spreadsheet function that returns the maximum value from a given range that meets a specified condition.</p>
+<p><strong>MINIFS</strong>: A spreadsheet function that returns the minimum value from a given range that meets a specified condition.</p>
+</blockquote>
+<h3 id="pivot-table">Pivot Table</h3>
+<blockquote>
+<p><strong>Summary table</strong>: A table used to summarize statistical information about data.</p>
+<p><strong>Calculated field</strong>: A new field within a pivot table that carries out certain calculations based on the values of other fields.</p>
+<p><strong>Profit margin</strong>: A percentage that indicates how many cents of profit has been generated for each dollar of sale.</p>
+</blockquote>
+<h2 id="data-calculation-in-sql">Data Calculation in SQL</h2>
+<blockquote>
+<p><strong>GROUP</strong> <strong>BY</strong>: A SQL clause that groups rows that have the same values from a table into summary rows.</p>
+</blockquote>
+<p>The simplest way to embed calculations in SQL:</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    columnA,
+    columnB,
+    columnA/columnB <span class="hljs-keyword">AS</span> columnX
+<span class="hljs-keyword">FROM</span>
+    table_name
+</code></pre>
+<h2 id="data-validation">Data Validation</h2>
+<blockquote>
+<p><strong>Data validation process</strong>: The process of checking and rechecking the quality of data so that it is complete, accurate, secure, and consistent.</p>
+<p><strong>Underscores</strong>: Lines used to underline words and connect text characters.</p>
+</blockquote>
+<h2 id="temporary-tables-in-sql">Temporary Tables in SQL</h2>
+<blockquote>
+<p><strong>Temporary table</strong>: A database table that is created and exists temporarily on a database server.</p>
+<p><strong>CONVERT</strong>: A SQL function that changes the unit of measurement of a value in data.</p>
+</blockquote>
+<p>Create a temporary table using the <code>WITH</code> clause: </p>
+<blockquote>
+<p><strong>WITH</strong>: A SQL clause that creates a temporary table that can be queried multiple times.</p>
+</blockquote>
+<pre><code class="lang-sql">WITH trips_over_1_hr AS (
+    <span class="hljs-keyword">SELECT</span>
+        *
+    <span class="hljs-keyword">FROM</span>
+        bigquery-<span class="hljs-keyword">public</span>-<span class="hljs-built_in">date</span>.new_york.citibike_trips
+    <span class="hljs-keyword">WHERE</span>
+        tripduration &gt;= <span class="hljs-number">60</span>
+    )
+
+## <span class="hljs-keyword">Count</span> how many trips <span class="hljs-keyword">are</span> <span class="hljs-number">60</span>+ munite <span class="hljs-keyword">long</span>: 
+<span class="hljs-keyword">SELECT</span>
+    <span class="hljs-keyword">COUNT</span>(*) <span class="hljs-keyword">AS</span> cnt
+<span class="hljs-keyword">FROM</span>
+    trips_over_1_hr
+</code></pre>
+<p>Use the <code>SELECT INTO</code> statement: </p>
+<blockquote>
+<p><strong>SELECT INTO</strong>: A SQL clause that copies data from one table into a temporary table without adding the new table to the database.</p>
+</blockquote>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    *
+<span class="hljs-keyword">INTO</span>
+    Africa_Sales
+<span class="hljs-keyword">FROM</span>
+    Global_Sales
+<span class="hljs-keyword">WHERE</span>
+    Region = <span class="hljs-string">&quot;Africa&quot;</span>
+</code></pre>
+<p>Use the <code>CREATE TABLE</code> clause: </p>
+<blockquote>
+<p><strong>CREATE TABLE</strong>: A SQL clause that adds a temporary table to a database that can be used by multiple people.</p>
+</blockquote>
+<pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Africa_Sales <span class="hljs-keyword">AS</span>
+(
+    <span class="hljs-keyword">SELECT</span>
+        *
+    <span class="hljs-keyword">FROM</span>
+        Global_Sales
+    <span class="hljs-keyword">WHERE</span>
+        Region = <span class="hljs-string">&quot;Africa&quot;</span>
+    )
+</code></pre>
+<blockquote>
+<p><strong>DROP TABLE</strong>: A SQL clause that removes a temporary table from a database.</p>
+</blockquote>
 
                                 
                                 </section>
@@ -686,12 +779,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="5.3.html" class="navigation navigation-prev " aria-label="Previous page: Data Aggregation">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="1.1.html" class="navigation navigation-next " aria-label="Next page: Foundations">
+                <a href="6.html" class="navigation navigation-next " aria-label="Next page: Share Data Through the Art of Visualization">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -702,7 +795,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Foundations Data, Data, Everywhere","level":"1.2","depth":1,"next":{"title":"Foundations","level":"1.2.1","depth":2,"path":"1.1.md","ref":"1.1.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"readme.md","ref":"readme.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.md","mtime":"2022-10-23T03:49:41.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Data Calculation","level":"1.6.4","depth":2,"next":{"title":"Share Data Through the Art of Visualization","level":"1.7","depth":1,"path":"6.md","ref":"6.md","articles":[{"title":"Visualizing Data","level":"1.7.1","depth":2,"path":"6.1.md","ref":"6.1.md","articles":[]},{"title":"Present the Data","level":"1.7.2","depth":2,"path":"6.2.md","ref":"6.2.md","articles":[]}]},"previous":{"title":"Data Aggregation","level":"1.6.3","depth":2,"path":"5.3.md","ref":"5.3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"5.4.md","mtime":"2022-10-23T04:10:26.453Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

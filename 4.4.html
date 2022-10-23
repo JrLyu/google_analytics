@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Foundations Data, Data, Everywhere · GitBook</title>
+        <title>Using SQL to Clean Data · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1.1.html" />
+    <link rel="next" href="4.5.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="4.3.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="1.html">
+        <li class="chapter " data-level="1.2" data-path="1.html">
             
                 <a href="1.html">
             
@@ -355,7 +355,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="4.4.html">
+        <li class="chapter active" data-level="1.5.4" data-path="4.4.html">
             
                 <a href="4.4.html">
             
@@ -642,7 +642,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Foundations Data, Data, Everywhere</a>
+        <a href="." >Using SQL to Clean Data</a>
     </h1>
 </div>
 
@@ -657,8 +657,104 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="foundations-data-data-everywhere">Foundations: Data, Data, Everywhere</h1>
-<p>This is the first course of the specialization, in which we will learn the foundation of data analytics, including some key terminologies and the six phases of data analytics. We will also start to use the spreadsheets and SQL. </p>
+                                <h1 id="using-sql-to-clean-data">Using SQL to Clean Data</h1>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    <span class="hljs-keyword">name</span>
+<span class="hljs-keyword">FROM</span>
+    table_name
+</code></pre>
+<pre><code class="lang-sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> xxx ()
+<span class="hljs-keyword">VALUES</span> ()
+</code></pre>
+<pre><code class="lang-sql"><span class="hljs-keyword">UPDATE</span> table_name
+<span class="hljs-keyword">SET</span> variable_nanme1 = <span class="hljs-string">&apos;value1&apos;</span>
+<span class="hljs-keyword">WHERE</span> variable_name2 = <span class="hljs-string">&apos;value2&apos;</span>
+</code></pre>
+<p>To avoid duplicated data, we can use the <code>DISTINCT</code> function.</p>
+<blockquote>
+<p><strong>DISTINCT</strong>: A keyword that is added to a SQL SELECT statement to retrieve only non-duplicate entries.</p>
+</blockquote>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    <span class="hljs-keyword">DISTINCT</span> variable_name
+<span class="hljs-keyword">FROM</span>
+    table_name
+</code></pre>
+<p>Use the <code>LENGTH</code> or <code>LEN</code> function to check if the text string variable matches. </p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    <span class="hljs-keyword">LENGTH</span>(variable_name) <span class="hljs-keyword">AS</span> column_name
+<span class="hljs-keyword">FROM</span>
+    table_nanme
+</code></pre>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    variable_nanme
+<span class="hljs-keyword">FROM</span>
+    table_name
+<span class="hljs-keyword">WHERE</span>
+    <span class="hljs-keyword">LENGTH</span>(coulumn_nanme) &gt; <span class="hljs-built_in">number</span>
+</code></pre>
+<p>Use <code>SUBSTR</code> function to select data we want. </p>
+<blockquote>
+<p><strong>SUBSTR</strong>: A SQL function that extracts a substring from a string variable.</p>
+</blockquote>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    <span class="hljs-keyword">DISTINCT</span> variable_name
+<span class="hljs-keyword">FROM</span>
+    table_name
+<span class="hljs-keyword">WHERE</span>
+    <span class="hljs-keyword">SUBSTR</span>(column_nanme,start_letter_position,number_of_letter) = <span class="hljs-string">&apos;value&apos;</span>
+</code></pre>
+<p>Use the <code>TRIM</code> function to remove extra spaces. </p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    <span class="hljs-keyword">DISTINCT</span> variable_name
+<span class="hljs-keyword">FROM</span>
+    table_nanme
+<span class="hljs-keyword">WHERE</span>
+    <span class="hljs-keyword">TRIM</span>(variable_name) = <span class="hljs-string">&apos;value&apos;</span>
+</code></pre>
+<blockquote>
+<p><strong>Typecasting</strong>: Converting data from one type to another.</p>
+</blockquote>
+<p>Use <code>CAST</code> function to convert data into different data types.</p>
+<blockquote>
+<p><strong>CAST</strong>: A SQL function that converts data from one datatype to another.</p>
+<p><strong>Float</strong>: A number that contains a decimal.</p>
+</blockquote>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    <span class="hljs-keyword">CAST</span>(variable_name <span class="hljs-keyword">AS</span> FLOAT64)
+<span class="hljs-keyword">FROM</span>
+    table_name
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+    <span class="hljs-keyword">CAST</span>(variable_name <span class="hljs-keyword">AS</span> FLOAT64) <span class="hljs-keyword">DESC</span>
+</code></pre>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    <span class="hljs-keyword">CAST</span>(<span class="hljs-built_in">date</span> <span class="hljs-keyword">AS</span> <span class="hljs-built_in">date</span>) <span class="hljs-keyword">AS</span> date_only, variable_name2
+<span class="hljs-keyword">FROM</span>
+    table_name
+<span class="hljs-keyword">WHERE</span>
+    <span class="hljs-built_in">date</span> <span class="hljs-keyword">BETWEEN</span> <span class="hljs-string">&apos;2020-12-01&apos;</span> <span class="hljs-keyword">AND</span> <span class="hljs-string">&apos;2020-12-31&apos;</span>
+</code></pre>
+<p>Use <code>CONCAT</code> function to combine two columns.</p>
+<blockquote>
+<p><strong>CONCAT</strong>: A SQL function that adds strings together to create new text strings that can be used as unique keys.</p>
+</blockquote>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    <span class="hljs-keyword">CONCAT</span>(varibale_name1,variable_name2) <span class="hljs-keyword">AS</span> new_name
+<span class="hljs-keyword">FROM</span>
+    table_name
+<span class="hljs-keyword">WHERE</span>
+    <span class="hljs-keyword">variable</span> = <span class="hljs-string">&apos;value&apos;</span>
+</code></pre>
+<p>When some information is missing, <code>COALESCE</code> function gives a secondary reference. </p>
+<blockquote>
+<p><strong>COALESCE</strong>: A SQL function that returns non-null values in a list.</p>
+</blockquote>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    <span class="hljs-keyword">COALESCE</span>(variable_name1,variable_name2) <span class="hljs-keyword">AS</span> new_name
+<span class="hljs-keyword">FROM</span>
+    table_name
+<span class="hljs-keyword">WHERE</span>
+    <span class="hljs-keyword">variable</span> = <span class="hljs-string">&apos;value&apos;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -686,12 +782,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="4.3.html" class="navigation navigation-prev " aria-label="Previous page: Ways to Clean Data">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="1.1.html" class="navigation navigation-next " aria-label="Next page: Foundations">
+                <a href="4.5.html" class="navigation navigation-next " aria-label="Next page: Reporting and Validating Clean Data">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -702,7 +798,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Foundations Data, Data, Everywhere","level":"1.2","depth":1,"next":{"title":"Foundations","level":"1.2.1","depth":2,"path":"1.1.md","ref":"1.1.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"readme.md","ref":"readme.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.md","mtime":"2022-10-23T03:49:41.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Using SQL to Clean Data","level":"1.5.4","depth":2,"next":{"title":"Reporting and Validating Clean Data","level":"1.5.5","depth":2,"path":"4.5.md","ref":"4.5.md","articles":[]},"previous":{"title":"Ways to Clean Data","level":"1.5.3","depth":2,"path":"4.3.md","ref":"4.3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"4.4.md","mtime":"2022-10-23T04:04:12.776Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

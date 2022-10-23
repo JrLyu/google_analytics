@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Foundations Data, Data, Everywhere · GitBook</title>
+        <title>Converting and Formatting Data · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1.1.html" />
+    <link rel="next" href="5.3.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="5.1.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="1.html">
+        <li class="chapter " data-level="1.2" data-path="1.html">
             
                 <a href="1.html">
             
@@ -426,7 +426,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="5.2.html">
+        <li class="chapter active" data-level="1.6.2" data-path="5.2.html">
             
                 <a href="5.2.html">
             
@@ -642,7 +642,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Foundations Data, Data, Everywhere</a>
+        <a href="." >Converting and Formatting Data</a>
     </h1>
 </div>
 
@@ -657,8 +657,87 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="foundations-data-data-everywhere">Foundations: Data, Data, Everywhere</h1>
-<p>This is the first course of the specialization, in which we will learn the foundation of data analytics, including some key terminologies and the six phases of data analytics. We will also start to use the spreadsheets and SQL. </p>
+                                <h1 id="converting-and-formatting-data">Converting and Formatting Data</h1>
+<h2 id="convert-and-format-data">Convert and Format Data</h2>
+<h3 id="using-the-spreadsheet">Using the Spreadsheet</h3>
+<h3 id="using-sql">Using SQL</h3>
+<p>The <code>CAST</code> function: </p>
+<pre><code class="lang-sql">CAST (expression AS typename)
+#expression is the data to be converted 
+#typename is the data type to be returned
+</code></pre>
+<p>Converting a number to a string</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CAST</span> (MyCount <span class="hljs-keyword">AS</span> <span class="hljs-keyword">STRING</span>) <span class="hljs-keyword">FROM</span> MyTable
+#<span class="hljs-keyword">SELECT</span> indicates that you will be selecting <span class="hljs-keyword">data</span> <span class="hljs-keyword">from</span> a <span class="hljs-keyword">table</span>
+#<span class="hljs-keyword">CAST</span> indicates that you will be converting the <span class="hljs-keyword">data</span> you <span class="hljs-keyword">select</span> <span class="hljs-keyword">to</span> a different <span class="hljs-keyword">data</span> <span class="hljs-keyword">type</span>
+#<span class="hljs-keyword">AS</span> comes <span class="hljs-keyword">before</span> <span class="hljs-keyword">and</span> identifies the <span class="hljs-keyword">data</span> <span class="hljs-keyword">type</span> which you <span class="hljs-keyword">are</span> casting <span class="hljs-keyword">to</span>
+#<span class="hljs-keyword">STRING</span> indicates that you <span class="hljs-keyword">are</span> converting the <span class="hljs-keyword">data</span> <span class="hljs-keyword">to</span> a <span class="hljs-keyword">string</span>
+#<span class="hljs-keyword">FROM</span> indicates which <span class="hljs-keyword">table</span> you <span class="hljs-keyword">are</span> selecting the <span class="hljs-keyword">data</span> <span class="hljs-keyword">from</span>
+</code></pre>
+<p>Converting a string to a number</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CAST</span> (MyVarcharCol <span class="hljs-keyword">AS</span> <span class="hljs-built_in">INT</span>) <span class="hljs-keyword">FROM</span> MyTable
+#<span class="hljs-keyword">SELECT</span> indicates that you will be selecting <span class="hljs-keyword">data</span> <span class="hljs-keyword">from</span> a <span class="hljs-keyword">table</span>
+#<span class="hljs-keyword">CAST</span> indicates that you will be converting the <span class="hljs-keyword">data</span> you <span class="hljs-keyword">select</span> <span class="hljs-keyword">to</span> a different <span class="hljs-keyword">data</span> <span class="hljs-keyword">type</span>
+#<span class="hljs-keyword">AS</span> comes <span class="hljs-keyword">before</span> <span class="hljs-keyword">and</span> identifies the <span class="hljs-keyword">data</span> <span class="hljs-keyword">type</span> which you <span class="hljs-keyword">are</span> casting <span class="hljs-keyword">to</span>
+#<span class="hljs-built_in">INT</span> indicates that you <span class="hljs-keyword">are</span> converting the <span class="hljs-keyword">data</span> <span class="hljs-keyword">to</span> an <span class="hljs-built_in">integer</span>
+#<span class="hljs-keyword">FROM</span> indicates which <span class="hljs-keyword">table</span> you <span class="hljs-keyword">are</span> selecting the <span class="hljs-keyword">data</span> <span class="hljs-keyword">from</span>
+</code></pre>
+<p>Converting a date to a string</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CAST</span> (MyDate <span class="hljs-keyword">AS</span> <span class="hljs-keyword">STRING</span>) <span class="hljs-keyword">FROM</span> MyTable
+#<span class="hljs-keyword">SELECT</span> indicates that you will be selecting <span class="hljs-keyword">data</span> <span class="hljs-keyword">from</span> a <span class="hljs-keyword">table</span>
+#<span class="hljs-keyword">CAST</span> indicates that you will be converting the <span class="hljs-keyword">data</span> you <span class="hljs-keyword">select</span> <span class="hljs-keyword">to</span> a different <span class="hljs-keyword">data</span> <span class="hljs-keyword">type</span>
+#<span class="hljs-keyword">AS</span> comes <span class="hljs-keyword">before</span> <span class="hljs-keyword">and</span> identifies the <span class="hljs-keyword">data</span> <span class="hljs-keyword">type</span> which you <span class="hljs-keyword">are</span> casting <span class="hljs-keyword">to</span>
+#<span class="hljs-keyword">STRING</span> indicates that you <span class="hljs-keyword">are</span> converting the <span class="hljs-keyword">data</span> <span class="hljs-keyword">to</span> a <span class="hljs-keyword">string</span>
+#<span class="hljs-keyword">FROM</span> indicates which <span class="hljs-keyword">table</span> you <span class="hljs-keyword">are</span> selecting the <span class="hljs-keyword">data</span> <span class="hljs-keyword">from</span>
+</code></pre>
+<p>Converting a date to a datetime</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CAST</span> (MyDate <span class="hljs-keyword">AS</span> DATETIME) <span class="hljs-keyword">FROM</span> MyTable
+#<span class="hljs-keyword">SELECT</span> indicates that you will be selecting <span class="hljs-keyword">data</span> <span class="hljs-keyword">from</span> a <span class="hljs-keyword">table</span>
+#<span class="hljs-keyword">CAST</span> indicates that you will be converting the <span class="hljs-keyword">data</span> you <span class="hljs-keyword">select</span> <span class="hljs-keyword">to</span> a different <span class="hljs-keyword">data</span> <span class="hljs-keyword">type</span>
+#<span class="hljs-keyword">AS</span> comes <span class="hljs-keyword">before</span> <span class="hljs-keyword">and</span> identifies the <span class="hljs-keyword">data</span> <span class="hljs-keyword">type</span> which you <span class="hljs-keyword">are</span> casting <span class="hljs-keyword">to</span>
+#DATETIME indicates that you <span class="hljs-keyword">are</span> converting the <span class="hljs-keyword">data</span> <span class="hljs-keyword">to</span> a datetime <span class="hljs-keyword">value</span>
+#<span class="hljs-keyword">FROM</span> indicates which <span class="hljs-keyword">table</span> you <span class="hljs-keyword">are</span> selecting the <span class="hljs-keyword">data</span> <span class="hljs-keyword">from</span>
+</code></pre>
+<p>The <code>SAFE_CAST</code> function: </p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> SAFE_CAST (MyDate <span class="hljs-keyword">AS</span> <span class="hljs-keyword">STRING</span>) <span class="hljs-keyword">FROM</span> MyTable
+</code></pre>
+<h2 id="combine-multiple-datasets">Combine Multiple Datasets</h2>
+<blockquote>
+<p><strong>Dataset</strong>: A collection of data that can be manipulated or analyzed as one unit.</p>
+<p><strong>Ranking</strong>: A system to position values of a dataset within a scale of achievement or status.</p>
+</blockquote>
+<p>Using the <code>CONCAT</code> function</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CONCAT</span> (<span class="hljs-string">&apos;Data&apos;</span>,<span class="hljs-string">&apos;analysis&apos;</span>)
+</code></pre>
+<p>The result will be <code>Dataanalysis</code>.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CONCAT</span> (<span class="hljs-string">&apos;Data&apos;</span>,<span class="hljs-string">&apos; &apos;</span>,<span class="hljs-string">&apos;analysis&apos;</span>)
+</code></pre>
+<p>The result will be <code>Data analysis</code>.</p>
+<p><code>CONCAT_WS</code>: A function that adds two or more strings together with a separator.</p>
+<pre><code class="lang-sql">CONCAT_WS (&#x2018; . &#x2019;, &#x2018;www&#x2019;, &#x2018;google&#x2019;, &#x2018;com&#x2019;)
+#The separator (being the period) gets input before and after Google when you run the SQL function
+</code></pre>
+<p><code>CONCAT with +</code>: Adds two or more strings together using the + operator</p>
+<blockquote>
+<p><strong>LIMIT</strong>: A SQL clause that specifies the maximum number of records returned in a query.</p>
+</blockquote>
+<p><strong><em>Example:</em></strong> </p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    usertype,
+    <span class="hljs-keyword">CONCAT</span>(start_station_name, <span class="hljs-string">&quot; to &quot;</span>, end_station_name) <span class="hljs-keyword">AS</span> route,
+    <span class="hljs-keyword">COUNT</span>(*) <span class="hljs-keyword">as</span> num_trips,
+    <span class="hljs-keyword">ROUND</span>(<span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CAST</span>(tripduration <span class="hljs-keyword">as</span> int64)/<span class="hljs-number">60</span>),<span class="hljs-number">2</span>) <span class="hljs-keyword">AS</span> <span class="hljs-keyword">duration</span>
+<span class="hljs-keyword">FROM</span>
+    <span class="hljs-string">&apos;bigquery-public-data,new_york,citibike_trips&apos;</span>
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+    start_station_name, end_station_name, usertype
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+    num_trips <span class="hljs-keyword">DESC</span>
+<span class="hljs-keyword">LIMIT</span> <span class="hljs-number">10</span>
+</code></pre>
+<blockquote>
+<p><strong>ROUND</strong>: A SQL function that returns a number rounded to a certain number of decimal places.</p>
+</blockquote>
 
                                 
                                 </section>
@@ -686,12 +765,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="5.1.html" class="navigation navigation-prev " aria-label="Previous page: Organizing Data">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="1.1.html" class="navigation navigation-next " aria-label="Next page: Foundations">
+                <a href="5.3.html" class="navigation navigation-next " aria-label="Next page: Data Aggregation">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -702,7 +781,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Foundations Data, Data, Everywhere","level":"1.2","depth":1,"next":{"title":"Foundations","level":"1.2.1","depth":2,"path":"1.1.md","ref":"1.1.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"readme.md","ref":"readme.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.md","mtime":"2022-10-23T03:49:41.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Converting and Formatting Data","level":"1.6.2","depth":2,"next":{"title":"Data Aggregation","level":"1.6.3","depth":2,"path":"5.3.md","ref":"5.3.md","articles":[]},"previous":{"title":"Organizing Data","level":"1.6.1","depth":2,"path":"5.1.md","ref":"5.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"5.2.md","mtime":"2022-10-23T04:10:29.481Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

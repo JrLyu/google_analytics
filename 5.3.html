@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Foundations Data, Data, Everywhere · GitBook</title>
+        <title>Data Aggregation · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1.1.html" />
+    <link rel="next" href="5.4.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="5.2.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="1.html">
+        <li class="chapter " data-level="1.2" data-path="1.html">
             
                 <a href="1.html">
             
@@ -439,7 +439,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="5.3.html">
+        <li class="chapter active" data-level="1.6.3" data-path="5.3.html">
             
                 <a href="5.3.html">
             
@@ -642,7 +642,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Foundations Data, Data, Everywhere</a>
+        <a href="." >Data Aggregation</a>
     </h1>
 </div>
 
@@ -657,8 +657,159 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="foundations-data-data-everywhere">Foundations: Data, Data, Everywhere</h1>
-<p>This is the first course of the specialization, in which we will learn the foundation of data analytics, including some key terminologies and the six phases of data analytics. We will also start to use the spreadsheets and SQL. </p>
+                                <h1 id="data-aggregation">Data Aggregation</h1>
+<blockquote>
+<p><strong>Aggregation</strong>: The process of collecting or gathering many separate pieces into a whole.</p>
+<p><strong>Data aggregation</strong>: The process of gathering data from multiple sources and combining it into a single, summarized collection.</p>
+</blockquote>
+<h2 id="using-vlookup-in-spreadsheets">Using VLOOKUP in Spreadsheets</h2>
+<blockquote>
+<p><strong>MATCH</strong>: A spreadsheet function used to locate the position of a specific lookup value.</p>
+<p><strong>VALUE</strong>: A spreadsheet function that converts a text string that represents a number to a numeric value.</p>
+</blockquote>
+<p>Basic syntax: =VLOOKUP(&#x201D;value_to_search&#x201D;, sheet2!$A$1:$D$10, column_number, FALSE)</p>
+<p>TRUE searches for approximate results, and FALSE searches for exact matches. </p>
+<blockquote>
+<p><strong>Absolute reference</strong>: A reference within a function that is locked so that rows and columns won&#x2019;t change if the function is copied.</p>
+</blockquote>
+<h2 id="using-join-in-sql">Using JOIN in SQL</h2>
+<blockquote>
+<p><strong>JOIN</strong>: A SQL function that is used to combine rows from two or more tables based on a related column.</p>
+</blockquote>
+<p><strong><em>Example:</em></strong></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    employees.<span class="hljs-keyword">name</span> <span class="hljs-keyword">AS</span> employee_name,
+    employees.<span class="hljs-keyword">role</span> <span class="hljs-keyword">AS</span> employy_role,
+    departments.<span class="hljs-keyword">name</span> <span class="hljs-keyword">AS</span> department_name
+<span class="hljs-keyword">FROM</span>
+    employees
+<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span>
+    deparments <span class="hljs-keyword">ON</span>
+    employees.deparment_id = deparments.deparment_id
+</code></pre>
+<p>Other JOINs: LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN</p>
+<blockquote>
+<p><strong>INNER JOIN</strong>: A SQL function that returns records with matching values in both tables.</p>
+<p><strong>LEFT JOIN</strong>: A SQL function that will return all the records from the left table and only the matching records from the right table.</p>
+<p><strong>RIGHT JOIN</strong>: A SQL function that will return all records from the right table and only the matching records from the left.</p>
+<p><strong>OUTER JOIN</strong>: A SQL function that combines RIGHT and LEFT JOIN to return all matching records in both tables.</p>
+</blockquote>
+<h2 id="using-count-and-count-distinct-in-sql">Using COUNT and COUNT DISTINCT in SQL</h2>
+<blockquote>
+<p><strong>COUNT DISTINCT</strong>: A SQL function that only returns the distinct values in a specified range.</p>
+</blockquote>
+<p><strong><em>Example:</em></strong> </p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    orders.*,
+    warehouse.warehouse_alias,
+    warehouse.state
+<span class="hljs-keyword">FROM</span> 
+    warehouse_orders.Orders <span class="hljs-keyword">AS</span> orders
+<span class="hljs-keyword">JOIN</span>
+    warehouse_orders.Warehouse <span class="hljs-keyword">AS</span> warehouse <span class="hljs-keyword">ON</span>
+    orders.warehouse_id = warehouse.warehouse_id
+<span class="hljs-keyword">LIMIT</span> <span class="hljs-number">100</span>
+
+<span class="hljs-keyword">SELECT</span>
+    <span class="hljs-keyword">COUNT</span>(<span class="hljs-keyword">DISTINCT</span> warehouse.state) <span class="hljs-keyword">AS</span> num_states
+<span class="hljs-keyword">FROM</span> 
+    warehouse_orders.Orders <span class="hljs-keyword">AS</span> orders
+<span class="hljs-keyword">JOIN</span>
+    warehouse_orders.Warehouse <span class="hljs-keyword">AS</span> warehouse <span class="hljs-keyword">ON</span>
+    orders.warehouse_id = warehouse.warehouse_id
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+    warehouse.state
+</code></pre>
+<blockquote>
+<p><strong>Aliasing</strong>: Temporarily naming a table or column in a query to make it easier to read and write.</p>
+</blockquote>
+<h2 id="work-with-subqueries">Work with Subqueries</h2>
+<blockquote>
+<p><strong>Subquery</strong>: A SQL query that is nested inside a larger query.</p>
+<p><strong>Inner query</strong>: A SQL subquery that is inside of another SQL statement.</p>
+<p><strong>Outer query</strong>: A SQL statement containing a subquery.</p>
+</blockquote>
+<p><strong><em>Examples:</em></strong></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    station_id,
+    num_bikes_available
+    (<span class="hljs-keyword">SELECT</span>
+        <span class="hljs-keyword">AVG</span>(num_bikes_available)
+    <span class="hljs-keyword">FROM</span> bigquery-<span class="hljs-keyword">public</span>-<span class="hljs-keyword">data</span>.new_york.citibike_stations) <span class="hljs-keyword">AS</span> avg_num_bikes_available
+<span class="hljs-keyword">FROM</span> 
+    bigquery-<span class="hljs-keyword">public</span>-<span class="hljs-keyword">data</span>.new_york.citibike_stations
+</code></pre>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    station_id,
+    <span class="hljs-keyword">name</span>,
+    number_of_rides <span class="hljs-keyword">AS</span> number_of_rides_starting_at_station
+<span class="hljs-keyword">FROM</span>
+    (
+        <span class="hljs-keyword">SELECT</span>
+            start_station_id
+            <span class="hljs-keyword">COUNT</span>(*) number_of_rides
+        <span class="hljs-keyword">FROM</span>
+            bigquery-<span class="hljs-keyword">public</span>-<span class="hljs-keyword">data</span>.new_york.trips
+        <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+            start_station_id
+        )
+<span class="hljs-keyword">AS</span> station_num_trips
+<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span>
+    bigquery-<span class="hljs-keyword">public</span>-<span class="hljs-keyword">data</span>.new_york.citibike_stations <span class="hljs-keyword">ON</span>
+    station_id = start_station_id
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+    number_of_rides <span class="hljs-keyword">DESC</span>
+</code></pre>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    station_id,
+    <span class="hljs-keyword">name</span>
+<span class="hljs-keyword">FROM</span>
+        bigquery-<span class="hljs-keyword">public</span>-<span class="hljs-keyword">data</span>.new_york.citibike_stations
+<span class="hljs-keyword">WHERE</span>
+    station_id <span class="hljs-keyword">IN</span>
+    (
+        <span class="hljs-keyword">SELECT</span>
+            start_station_id
+        <span class="hljs-keyword">FROM</span>
+            bigquery-<span class="hljs-keyword">public</span>-<span class="hljs-keyword">data</span>.new_york.trips
+        <span class="hljs-keyword">WHERE</span>
+            usertype = <span class="hljs-string">&apos;Subscriber&apos;</span>
+    )
+</code></pre>
+<p>Use HAVING and CASE in subqueries. </p>
+<blockquote>
+<p><strong>HAVING</strong>: A SQL clause that adds a filter to a query instead of the underlying table that can only be used with aggregate functions.</p>
+</blockquote>
+<p><strong><em>Example:</em></strong></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span>
+    Warehouse.warehouse_id,
+    <span class="hljs-keyword">CONCAT</span>(Warehouse.state, <span class="hljs-string">&apos;: &apos;</span>, Warehouse.warehouse_alias) <span class="hljs-keyword">AS</span> warehouse_name
+    <span class="hljs-keyword">COUNT</span>(Orders.order_id) <span class="hljs-keyword">AS</span> number_of_orders,
+    (
+        <span class="hljs-keyword">SELECT</span>
+            <span class="hljs-keyword">COUNT</span>(*)
+        <span class="hljs-keyword">FROM</span> warehouse_orders.Orders Orders
+    )
+    <span class="hljs-keyword">AS</span> total_orders,
+    <span class="hljs-keyword">CASE</span>
+        <span class="hljs-keyword">WHEN</span> <span class="hljs-keyword">COUNT</span>(Orders.order_id)/(<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(*) <span class="hljs-keyword">FROM</span> warehouse_orders.Orders Orders) &lt;= <span class="hljs-number">0.20</span>
+        <span class="hljs-keyword">THEN</span> <span class="hljs-string">&quot;Fulfilled 0-20% of Orders&quot;</span>
+        <span class="hljs-keyword">WHEN</span> <span class="hljs-keyword">COUNT</span>(Orders.order_id)/(<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(*) <span class="hljs-keyword">FROM</span> warehouse_orders.Orders Orders) &gt; <span class="hljs-number">0.20</span>
+        <span class="hljs-keyword">AND</span> <span class="hljs-keyword">COUNT</span>(Orders.order_id)/(<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(*) <span class="hljs-keyword">FROM</span> warehouse_orders.Orders Orders) &lt;= <span class="hljs-number">0.60</span>
+        <span class="hljs-keyword">THEN</span> <span class="hljs-string">&quot;Fulfilled 21-60% of Orders&quot;</span>
+    <span class="hljs-keyword">ELSE</span> <span class="hljs-string">&quot;Fulfilled moree than 60% of Orders&quot;</span>
+    <span class="hljs-keyword">END</span> <span class="hljs-keyword">AS</span> fulfillment_summary
+<span class="hljs-keyword">FROM</span>
+    warehouse_orders.Warehouse Warehouse
+<span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span>
+    warehouse_orders.Orders Orders <span class="hljs-keyword">ON</span>
+    Orders.warehouse_id = Warehouse.warehouse_id
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+    Warehouse.warehouse_id,
+    warehouse_name
+<span class="hljs-keyword">HAVING</span> 
+    <span class="hljs-keyword">COUNT</span>(Orders.order_id) &gt; <span class="hljs-number">0</span>
+</code></pre>
 
                                 
                                 </section>
@@ -686,12 +837,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="5.2.html" class="navigation navigation-prev " aria-label="Previous page: Converting and Formatting Data">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="1.1.html" class="navigation navigation-next " aria-label="Next page: Foundations">
+                <a href="5.4.html" class="navigation navigation-next " aria-label="Next page: Data Calculation">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -702,7 +853,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Foundations Data, Data, Everywhere","level":"1.2","depth":1,"next":{"title":"Foundations","level":"1.2.1","depth":2,"path":"1.1.md","ref":"1.1.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"readme.md","ref":"readme.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.md","mtime":"2022-10-23T03:49:41.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Data Aggregation","level":"1.6.3","depth":2,"next":{"title":"Data Calculation","level":"1.6.4","depth":2,"path":"5.4.md","ref":"5.4.md","articles":[]},"previous":{"title":"Converting and Formatting Data","level":"1.6.2","depth":2,"path":"5.2.md","ref":"5.2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"5.3.md","mtime":"2022-10-23T04:10:27.798Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-23T04:19:40.345Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
